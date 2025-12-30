@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hola</title>
+
+  <!-- Google Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:opsz,wght@17..18,300;17..18,400;17..18,500;17..18,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="layout">
+
+    <section class="skills block">
+      <h3>• skills</h3>
+      <p>
+        audio engineering<br>
+        ux & ui design<br>
+        generative ai<br>
+        music
+      </p>
+    </section>
+
+    <section class="center">
+      <h1 id="hola">hola</h1>
+    </section>
+
+    <!-- bottom row wrapper -->
+    <div class="bottom-row">
+      <section class="hobbies block">
+        <h3>• hobbies</h3>
+        <p>
+          music collecting<br>
+          learning<br>
+          reading<br>
+          art
+        </p>
+      </section>
+
+      <section class="experience block">
+  <h3>socials •</h3>
+  <p>
+    GitHub<br>
+    <span>
+      <a href="https://github.com/sobmachine" target="_blank" rel="noopener">
+        @sobmachine
+      </a>
+    </span>
+  </p>
+</section>
+    </div>
+
+  </main>
+</body>
+<script>
+  const greetings = [
+    { text: "hola", weight: 5 },       // very common
+    { text: "hello", weight: 4 },      // common
+    { text: "bonjour", weight: 2 },
+    { text: "ciao", weight: 2 },
+    { text: "olá", weight: 2 },
+    { text: "hallo", weight: 1 },
+    { text: "привет", weight: 1 },
+    { text: "नमस्ते", weight: 1 },
+    { text: "こんにちは", weight: 1 }
+  ];
+
+  // build weighted pool
+  const pool = [];
+  greetings.forEach(g => {
+    for (let i = 0; i < g.weight; i++) {
+      pool.push(g.text);
+    }
+  });
+
+  // pick one
+  const randomGreeting = pool[Math.floor(Math.random() * pool.length)];
+
+  // apply
+  document.getElementById("hola").textContent = randomGreeting;
+</script>
+</html>
